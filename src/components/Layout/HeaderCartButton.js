@@ -2,9 +2,9 @@ import React from 'react';
 
 const HeaderCartButton = () => {
     return (
-        <div>
+        <button>
 
-        </div>
+        </button>
     );
 };
 
