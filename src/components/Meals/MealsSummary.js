@@ -9,11 +9,11 @@ const MealsSummary = () => {
                 of available meals and enjoy a delicious lunch of
                 dinner at home
             </p>
-            <P>
+            <p>
                 All our meals are cooked with high-quality
                 ingredients, just-in-time and of course by
                 experienced chefs!
-            </P>
+            </p>
         </section>
     );
 };
