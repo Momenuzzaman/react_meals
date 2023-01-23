@@ -1,5 +1,5 @@
-import React from 'react';
-import { useReducer } from 'react/cjs/react.production.min';
+import React, { useReducer } from 'react';
+
 import CartContext from './cart-context';
 
 const defaultCartState = {
@@ -21,8 +21,8 @@ const cartReducer = (state, action) => {
 const CartProviders = (props) => {
     const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState)
 
-    const addItemToCartHandler = (items) => {
-        dispatchCartAction({ type: 'ADD', items: items })
+    const addItemToCartHandler = (item) => {
+        dispatchCartAction({ type: 'ADD', item: item })
     };
 
     const removeItemFromCartHandler = (id) => {
