@@ -29,7 +29,6 @@ const Cart = (props) => {
                     onAdd={cartItemAddHandler.bind(null, item)} />
             ))}
         </ul>)
-
     return (
         <Modal onclose={props.onClose}>
             {cartItems}
