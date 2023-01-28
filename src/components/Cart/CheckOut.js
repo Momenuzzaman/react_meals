@@ -1,8 +1,11 @@
 import React from 'react';
 import classes from './CartItem.module.css';
 const CheckOut = (props) => {
+    const confirmHandler = (event) => {
+        event.preventDefault();
+    };
     return (
-        <form>
+        <form onSubmit={confirmHandler}>
             <div className={classes.control}>
                 <label htmlFor="name">Your Name</label>
                 <input type="text" id="name" />
@@ -19,7 +22,7 @@ const CheckOut = (props) => {
                 <label htmlFor="city">City</label>
                 <input type="text" id="city" />
             </div>
-            <button typeof='button' onClick={props.onCancel}>Cancel</button>
+            <button type='button' onClick={props.onCancel}>Cancel</button>
             <button>Confirm</button>
         </form>
     );
