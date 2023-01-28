@@ -1,8 +1,11 @@
 import React, { useRef } from 'react';
 import classes from './CheckOut.module.css';
 
-const CheckOut = (props) => {
 
+const isEmpty = value => value.trim() === '';
+const isFiveChars = value => value.trim().length === 5;
+
+const CheckOut = (props) => {
     const nameInputRef = useRef();
     const streetInputRef = useRef();
     const postalCodeInputRef = useRef();
@@ -15,6 +18,11 @@ const CheckOut = (props) => {
         const enteredStreet = streetInputRef.current.value;
         const enteredCity = cityInputRef.current.value;
         const enteredPostalCode = postalCodeInputRef.current.value;
+
+        const enteredNameIsValid = !isEmpty(enteredName);
+        const enteredStreetIsValid = !isEmpty(enteredStreet);
+        const enteredCityIsValid = !isEmpty(enteredCity);
+        const enteredPostalCodeIsValid = isFinite(enteredPostalCode);
     };
     return (
         <form className={classes.form} onSubmit={confirmHandler}>
