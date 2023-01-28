@@ -32,10 +32,10 @@ const Cart = (props) => {
                     onAdd={cartItemAddHandler.bind(null, item)} />
             ))}
         </ul>)
-    const modalAction = <div className={classes.actions}>
+    const modalAction = (<div className={classes.actions}>
         <button className={classes['button--alt']} onClick={props.onClose}>Close</button>
-        {hasItems && <button className={classes.button} onClick={checkOutHandler}>Order</button>}
-    </div>
+        {hasItems && (<button className={classes.button} onClick={checkOutHandler}>Order</button>)}
+    </div>)
     return (
         <Modal onclose={props.onClose}>
             {cartItems}
@@ -43,7 +43,7 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
             </div>
-            {isCheckOut && <CheckOut />}
+            {isCheckOut && <CheckOut onCancel={props.onClose} />}
             {!isCheckOut && modalAction}
         </Modal>
     );

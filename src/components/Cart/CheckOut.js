@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './CartItem.module.css';
-const CheckOut = () => {
+const CheckOut = (props) => {
     return (
         <form>
             <div className={classes.control}>
@@ -19,6 +19,7 @@ const CheckOut = () => {
                 <label htmlFor="city">City</label>
                 <input type="text" id="city" />
             </div>
+            <button typeof='button' onClick={props.onCancel}>Cancel</button>
             <button>Confirm</button>
         </form>
     );
